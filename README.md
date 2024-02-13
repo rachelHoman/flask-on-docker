@@ -6,7 +6,7 @@ In this project we containerize a Flask application with Postgres for developmen
 This repo is inspired by this tutorial: https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/
 
 This application allows for users to upload images and view their uploaded images in their browers. See below for example:
-![]([https://github.com/rachelHoman/flask-on-docker/hw3-screen-recording.gif](https://github.com/rachelHoman/flask-on-docker/blob/main/hw3-screen-recording.gif))
+![](https://github.com/rachelHoman/flask-on-docker/blob/main/hw3-screen-recording.gif)
 
 
 # Build Instructions
@@ -19,6 +19,41 @@ to check if docker-compose is installed and if not, successfully run this comman
 `$ pip3 install docker-compose`
 
 # Development
+Build and run the Docker container with:
+
+`$ docker-compose up -d --build`
+
+Test the connetion by navigating to your local port such as: [http://localhost:1363](http://localhost:1363). You should see something like:
+
+```
+{
+  "hello": "world"
+}
+```
+To confirm that the data table was created you can follow these commands:
+
+```
+$ docker-compose exec db psql --username=hello_flask --dbname=hello_flask_dev
+
+hello_flask_dev=# \l
+```
+
+You can check for the text script located in the static folder at [http://localhost:1363/static/hello.txt](http://localhost:1363/static/hello.txt). In your browser you should see:
+
+`hi!`
+
+Lastly, to upload an image, visit http://localhost:1363/upload.
+
+To view the image uploaded, access: http://localhost:1363/media/IMAGE_FILE_NAME.
+
+To end, bring down the development containers with:
+
+`$ docker-compose down -v`
+
+>[!NOTE]
+>the -v flag also brings down the associated volumes
+
+
 
 
 # Production
