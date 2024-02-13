@@ -54,6 +54,27 @@ To end, bring down the development containers with:
 >the -v flag also brings down the associated volumes
 
 
-
-
 # Production
+>[!NOTE]
+>This repository does not contain the .env.prod and .env.prod.db environment variable files. For secuirty purposes they are necessary for the services to run from the container.
+
+Build and run the Docker contianer as follows:
+
+`$ docker-compose -f docker-compose.prod.yml up -d --build`
+
+Create the data table:
+
+`$ docker-compose -f docker-compose.prod.yml exec web python manage.py create_db`
+
+To test the connection, again check http://localhost:1363. You should see something like this in your browser:
+
+```
+{"hello": "world"}
+```
+Use the same process as above to upload and views photos.
+
+
+To end, bring down the containers with:
+
+`$ docker-compose -f docker-compose.prod.yml down -v`
+
