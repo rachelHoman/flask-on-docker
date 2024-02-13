@@ -6,7 +6,7 @@ In this project we containerize a Flask application with Postgres for developmen
 This repo is inspired by this tutorial: https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/
 
 This application allows for users to upload images and view their uploaded images in their browers. See below for example:
-![](https://github.com/rachelHoman/flask-on-docker/hw03-screen-recording.gif)
+![](https://github.com/rachelHoman/flask-on-docker/hw3-screen-recording.gif)
 
 
 # Build Instructions
