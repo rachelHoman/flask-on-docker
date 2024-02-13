@@ -51,7 +51,7 @@ To end, bring down the development containers with:
 `$ docker-compose down -v`
 
 >[!NOTE]
->the -v flag also brings down the associated volumes
+>The -v flag brings down the associated volumes
 
 
 # Production
@@ -71,7 +71,7 @@ To test the connection, again check http://localhost:1363. You should see someth
 ```
 {"hello": "world"}
 ```
-Use the same process as above to upload and views photos.
+Use the same process as [above](https://github.com/rachelHoman/flask-on-docker/blob/main/README.md#:~:text=hi!-,Lastly,-%2C%20to%20upload%20an) to upload and views photos.
 
 
 To end, bring down the containers with:
